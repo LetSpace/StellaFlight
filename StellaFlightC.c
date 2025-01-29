@@ -9,9 +9,9 @@ void led_task()
 {   
     while (true) {
         cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 1);
-        vTaskDelay(100);
+        vTaskDelay(200);
         cyw43_arch_gpio_put(CYW43_WL_GPIO_LED_PIN, 0);
-        vTaskDelay(100);
+        vTaskDelay(200);
     }
 }
 
@@ -22,7 +22,7 @@ void print_task()
     while (true) {
         printf("Hello, world! %d\n", i);
         i++;
-        vTaskDelay(75);
+        vTaskDelay(50);
     }
 }
 
