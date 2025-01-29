@@ -20,7 +20,7 @@ void print_task()
     int i = 0;
 
     while (true) {
-        printf("Hello, world! %d\n", i);
+        printf("Goodbye! %d\n", i);
         i++;
         vTaskDelay(75);
     }
