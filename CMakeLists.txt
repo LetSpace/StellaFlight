@@ -31,36 +31,36 @@ include(pico_sdk_import.cmake)
 # Pull in FreeRTOS Kernel (see: FreeRTOS-Kernel/portable/ThirdParty/GCC/RP2040/README.md)
 include(FreeRTOS_Kernel_import.cmake)
 
-project(StellaFlightC C CXX ASM)
+project(StellaFlight C CXX ASM)
 
 # Initialise the Raspberry Pi Pico SDK
 pico_sdk_init()
 
 # Add executable. Default name is the project name, version 0.1
-add_executable(StellaFlightC StellaFlightC.c )
+add_executable(StellaFlight StellaFlight.c )
 
-pico_set_program_name(StellaFlightC "StellaFlightC")
-pico_set_program_version(StellaFlightC "0.1")
+pico_set_program_name(StellaFlight "StellaFlight")
+pico_set_program_version(StellaFlight "0.1")
 
 # Modify the below lines to enable/disable output over UART/USB
-pico_enable_stdio_uart(StellaFlightC 0)
-pico_enable_stdio_usb(StellaFlightC 1)
+pico_enable_stdio_uart(StellaFlight 0)
+pico_enable_stdio_usb(StellaFlight 1)
 
 # Add the standard library to the build
-target_link_libraries(StellaFlightC
+target_link_libraries(StellaFlight
         pico_stdlib)
 
 # Add the standard include files to the build
-target_include_directories(StellaFlightC PRIVATE
+target_include_directories(StellaFlight PRIVATE
         ${CMAKE_CURRENT_LIST_DIR}
 )
 
 # Add any user requested libraries
-target_link_libraries(StellaFlightC 
+target_link_libraries(StellaFlight 
         pico_cyw43_arch_none
         FreeRTOS-Kernel
         FreeRTOS-Kernel-Heap4
         )
 
-pico_add_extra_outputs(StellaFlightC)
+pico_add_extra_outputs(StellaFlight)
 
